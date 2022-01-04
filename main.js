@@ -4,29 +4,20 @@ const hat = '^';
 const hole = 'O';
 const fieldCharacter = '░';
 const pathCharacter = '*';
-const height = 5; //Math.floor(Math.random() * (11 - 5)) + 5;
-const width = 5; //Math.floor(Math.random() * (11 - 5)) + 5;
-const hardheight = Math.floor(Math.random() * (20 - 10)) + 10;
-const hardwidth = Math.floor(Math.random() * (20 - 10)) + 10;
+var height;
+var width;
 
-// const userInputgamemode = prompt('Please select the game mode? (easy or hard) ');
+const userInputgamemode = prompt('Please select the game mode? (easy or hard) ');
 
-// if (userInputgamemode === 'esay') {
-//     console.log(userInputgamemode);
-//     console.log('Hello');
-//     const myField = new Field(Field.generateField(5, 5, 0.2));
-//     myField.easyGame();
-// } else if (userInputgamemode === 'hard') {
-//     console.log(userInputgamemode);
-//     console.log('HI');
-//     // height = Math.floor(Math.random() * (50 - 20)) + 20;
-//     // width = Math.floor(Math.random() * (50 - 20)) + 20;
-//     const myField = new Field(Field.generateField(height, width, 0.5));
-//     myField.hardMode();
-// } else {
-//     console.log('123');
-// }
-
+if (userInputgamemode === 'easy') {
+    height = 5;
+    width = 5;
+} else if (userInputgamemode === 'hard') {
+    height = Math.floor(Math.random() * (20 - 10)) + 10;
+    width = Math.floor(Math.random() * (20 - 10)) + 10;
+} else {
+    console.log('88');
+}
 
 class Field {
     constructor(fieldArray) {
@@ -42,16 +33,7 @@ class Field {
         }
     }
 
-    hardMode() {
-        while (this.isPlayingNow) {
-            this.field[this.y][this.x] = pathCharacter;
-            myField.print();
-            myField.askDirection();
-        }
-        console.log('Game End');
-    }
-
-    easyGame() {
+    startGame() {
         while (this.isPlayingNow) {
             this.field[this.y][this.x] = pathCharacter;
             myField.print();
@@ -169,9 +151,20 @@ class Field {
 
 }
 
+const myField = new Field(Field.generateField(height, width, 0.2));
+myField.startGame();
 
-const myField = new Field(Field.generateField(hardheight, hardwidth, 0.4));
-myField.hardMode();
+// const userInputgamemode = prompt('Please select the game mode? (easy or hard) ');
+
+// if (userInputgamemode === 'easy') {
+//     const myField = new Field(Field.generateField(height, width, 0.2));
+//     myField.easyGame();
+// } else if (userInputgamemode === 'hard') {
+//     const myField = new Field(Field.generateField(hardheight, hardwidth, 0.4));
+//     myField.hardMode();
+// } else {
+//     console.log('123');
+// }
 
 // const myField = new Field(Field.generateField(height, width, 0.2));
 // myField.easyGame();
