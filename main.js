@@ -169,14 +169,6 @@ myField.startGame();
 // const myField = new Field(Field.generateField(height, width, 0.2));
 // myField.easyGame();
 
-
-// ([
-//     ['*', '░', '░'],
-//     ['░', 'O', '░'],
-//     ['░', '^', '░'],
-// ]);
-
-
 // const name = prompt('What is your name? ');
 // console.log(`Hey there ${name}`);
 
